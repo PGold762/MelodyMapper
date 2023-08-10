@@ -25,8 +25,13 @@ const api2URL = `https://app.ticketmaster.com/discovery/v2/events.json?classific
             btn.onclick=function (){
                 window.location.assign(events[i].url)
             }
+            let btnAddToFavorites =document.createElement('button')
+            btnAddToFavorites.textContent= 'Add to Favorites'
+            btnAddToFavorites.onclick= function () {
+                
+            }
         
-            liEl.append(name,dateEl, venue, image, btn)
+            liEl.append(name,dateEl, venue, image, btn, btnAddToFavorites)
             listEl.append(liEl)
         }
       })
