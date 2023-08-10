@@ -9,16 +9,39 @@
     <title>Melody Mapper</title>
 </header>
 <body class="indigo darken-4">
-
+    <!-- Main Page Wrapper -->
     <main class="container white z-depth-3">
+        <!-- Header -->
         <header class="row section yellow accent-2 z-depth-5 navbar-fixed">
             <div class="col s5">
+                <!-- Logo -->
                 <h1 class="flow-text">&#119070; MelodyMapper &#119070;</h1>
             </div>
-            <div class="col s7">This is some sample text!</div>
+            <!-- Navigation -->
+            <div class="col s7">This is some sample text!
+            </div>
         </header>
+        <!-- Body Copy -->
         <section class="row section">
-            <div class="col s3 z-depth-3">Info</div>
+            <!-- Left Side -->
+            <div class="col s3 z-depth-3">
+                <!-- Search -->
+                <div>
+                    <form id="search">
+                        <h3> Search For Events By Title or Date</h3>
+                        <input type=text id="input-search" >
+                        <input type="submit">
+                    </form>
+                </div>
+                <div>
+                    <h3>Search History</h3>
+                    <div id="history"></div>
+                </div>
+                <div id="favorites">
+                    <h3>Favorites</h3>
+                </div>
+            </div>
+            <!-- Right Side -->
             <div class="col s9 z-depth-3">
                 <div id="events">
                     <ul></ul>
