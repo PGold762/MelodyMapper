@@ -1,5 +1,46 @@
 h1 {
-    font-size: 30px;
+    font-size: 30px; !important
     color: #000;
     font-weight: bold;
+    padding:0;
+    margin:5px 0 0 0;
+}
+
+header p {
+    margin:0;
+    padding:0;
+}
+
+/* header {
+    background-image: linear-gradient(to top, #1A237E 0%, #FFFF00 100% )
+} */
+
+/* .body {
+    margin: 0 20px;
+} */
+
+/* Search Button Styles */
+.waves-effect {
+    background-color: blue;
+}
+
+.waves-effect:hover  {
+    background-color: yellow;
+    color: black;
+}
+
+/* Left Side Styles */
+/* .left-side {
+    margin: 0 20px 0 0;
+} */
+
+/* Right Side Styles */
+/* .right-side {
+    margin: 0 0 0 20px;
+} */
+
+
+
+input[type="text"]::placeholder {
+    text-align: center;
 }
