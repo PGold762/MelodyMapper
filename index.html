@@ -10,49 +10,53 @@
 </header>
 <body class="indigo darken-4">
     <!-- Main Page Wrapper -->
-    <main class="container white z-depth-3">
+    <main class="container white z-depth-2">
         <!-- Header -->
-        <header class="row section yellow accent-2 z-depth-5 navbar-fixed">
-            <div class="col s5">
+        <header class="row section yellow accent-2 z-depth-5">
+            <div class="col s12 m5 l5 xl5 ">
                 <!-- Logo -->
                 <h1 class="flow-text">&#119070; MelodyMapper &#119070;</h1>
             </div>
             <!-- Navigation -->
-            <div class="col s7">
+            <div class="col s12 m7 l7 xl7">
                 <p class="flow-text">Welcome to Nashville TN's Top Music Finder App!</p>
             </div>
         </header>
         <!-- Body Copy -->
-        <section class="row section">
+        <section class="body row section">
             <!-- Left Side -->
-            <div class="col s3 z-depth-3">
+            <div class="left-side col s12 m3 l3 xl3">
                 <!-- Search -->
-                <div>
+                <div class="center-align">
                     <form id="search">
                         <h3 class="flow-text"> Search For Events</h3>
                         <input type=text id="input-search" placeholder="Search By Band or Date" >
-                        <button type="submit" class="waves-effect waves-yellow btn">Submit
-                            <i class="material-icons right">send</i>
+                        <button type="submit" class="waves-effect waves-yellow btn">Search
                         </button>
                     </form>
                 </div>
-                <div>
+                <!-- History -->
+                <div class="center-align">
                     <h3 class="flow-text">Search History</h3>
                     <div id="history"></div>
                 </div>
-                <div id="favorites">
+                <!-- Favorites -->
+                <div id="favorites" class="center-align">
                     <h3 class="flow-text">Favorites</h3>
                 </div>
             </div>
             <!-- Right Side -->
-            <div class="col s9 z-depth-3">
+            <div class="right-side col s12 m9 l9 xl9 ">
+                <div>
+                    <h2 class="flow-text center-align">Events in Nashville</h2>
+                </div>
                 <div id="events">
-                    <ul></ul>
-                </div> <!-- This is where the data will be displayed -->
+                    <ul></ul><!-- This is where the data will be displayed -->
+                </div> 
             </div>
         </section>
         <!-- Footer -->
-        <footer class="yellow accent-2">
+        <footer class="yellow accent-2 col s12 m12 l12 xl12">
             <p class="flow-text center">&#119070; MelodyMapper &#119070;</p>
             <p class="flow-text center">&copy 2023 </p>
         </footer>

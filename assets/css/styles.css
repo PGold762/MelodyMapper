@@ -11,14 +11,36 @@ header p {
     padding:0;
 }
 
-header {
-    
-}
+/* header {
+    background-image: linear-gradient(to top, #1A237E 0%, #FFFF00 100% )
+} */
 
+/* .body {
+    margin: 0 20px;
+} */
+
+/* Search Button Styles */
 .waves-effect {
     background-color: blue;
 }
 
-.waves-effect submit {
-    
+.waves-effect:hover  {
+    background-color: yellow;
+    color: black;
+}
+
+/* Left Side Styles */
+/* .left-side {
+    margin: 0 20px 0 0;
+} */
+
+/* Right Side Styles */
+/* .right-side {
+    margin: 0 0 0 20px;
+} */
+
+
+
+input[type="text"]::placeholder {
+    text-align: center;
 }
