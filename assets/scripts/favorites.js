@@ -91,7 +91,7 @@ fetch(api2URL)
             let ulEl = document.createElement('ul')
             ulEl.className = 'favorites-ul'; //Class for Favorites ul
             liEl.classList.add('li-class')
-    let ulEl = document.createElement('ul');
+    // let ulEl = document.createElement('ul');
     ulEl.classList.add('ul-class')
     liEl.textContent = favoritesArray[i].name
             favoritesListEl.append(ulEl)
