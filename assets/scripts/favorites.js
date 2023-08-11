@@ -67,7 +67,7 @@ fetch(api2URL)
                 btnAddToFavorites.textContent = 'Added to Favorites'
             }
 
-            liEl.append(name, dateEl, venue, image, btn, btnAddToFavorites)
+            liEl.append(eventName, dateEl, venue, image, btn, btnAddToFavorites)
             listEl.append(liEl)
             
         }
@@ -84,7 +84,9 @@ fetch(api2URL)
         const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || []
         for (let i = 0; i < favoritesArray.length; i++) {
             let liEl = document.createElement('li')
+            let ulEl = document.createElement('ul')
             liEl.textContent = favoritesArray[i].name
-            favoritesListEl.append(liEl)
+            favoritesListEl.append(ulEl)
+            ulEl.append(liEl)
         }
     }
