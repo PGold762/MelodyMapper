@@ -1,7 +1,12 @@
 # MelodyMapper
-
-# Requirements
-
+## Description
+Created a live music application that can serach concerts in the Nashville area. Users can search by band name, date, and even add specific concerts/live music to favorites section
+saving to local storage.
+## User Story
+As a user, 
+I want to search live music, 
+so that I can easily find venues.
+## Acceptance Criteria (Requirements will change soon)
 Needs 2 server side APIs
 
 Must use CSS Framework other than Bootstrap (Looking at Tailwind)
@@ -17,23 +22,25 @@ Must NOT use alerts, confirms, or prompts (look at modal windows)
 Must be deployed to GitHub Pages
 
 Must be interactive (ie: accept and respond to user input)
+## Installation
+Download the files from the repo and install on domain. Should work instantly.
+## Usage
+This is a responsive website that presents a weather dashboard. You're able to search by city and be presented with current day forecast and 5 day forecast.
+Link to view: [Weather Dashboard](https://pgold762.github.io/TimedQuiz/)
+Screenshot of website:
+![Weather Dashboard](./assets/images/timed-quiz.png "Weather")
+## Credits 
+https://materializecss.com/
 
-# Development Resources
+https://stackoverflow.com/questions/10123953/how-to-sort-an-object-array-by-date-property
 
-APIs
+Ticketmaster - https://developer.ticketmaster.com/products-and-docs/apis/getting-started/?ref=apilist.fun
+-- can search events, venues, locations
+-- free up to 5,000 requests a day
+-- Get request indentifiers https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#event-details-v2
 
-1. Ticketmaster - https://developer.ticketmaster.com/products-and-docs/apis/getting-started/?ref=apilist.fun
-   -- can search events, venues, locations
-   -- free up to 5,000 requests a day
-   -- Get request indentifiers https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#event-details-v2
+Lucas- Tutoring with Meg Meyers
 
-2. Google Maps -
-   -- Free limited
+AskBCS
 
-3. Radar -- https://radar.com/pricing?utm_term=google%20maps%20api&utm_campaign=pr_amer_us_all_all_nonbrand-compete-google_gen-product_ru1&utm_source=google&utm_medium=cpc&hsa_acc=5528249850&hsa_cam=13702510004&hsa_grp=138497667578&hsa_ad=667676944278&hsa_src=g&hsa_tgt=kwd-335425467&hsa_kw=google%20maps%20api&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjwoK2mBhDzARIsADGbjeqeN5Q4UGMbZWUCgDTh1o6_3gflwFd1C1eLCQPU1OAaSf-BwZmgQbwaAhThEALw_wcB
-   -- Free maps API (limited)
-   --
 
-   # Plan B
-
-   Instead on using a map populating feature, use Google Calendars to populate the calendar with upcoming events.
