@@ -26,30 +26,58 @@ fetch(api2URL)
             btn.onclick = function () {
                 window.location.assign(events[i].url)
             }
+
             let btnAddToFavorites = document.createElement('button')
             btnAddToFavorites.textContent = 'Add to Favorites'
+
+            const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || []
+            for (let j = 0; j < favoritesArray.length; j++) {
+                if (events[i].id === favoritesArray[j].id) {
+                    isButtonClicked = true
+                    btnAddToFavorites.disabled = true
+                    btnAddToFavorites.textContent = 'Added to Favorites'
+                }
+            }
+
             btnAddToFavorites.onclick = function () {
+                var foundFavorites = false;
                 console.log(events[i])
                 const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || []
-                favoritesArray.push(events[i])
-                localStorage.setItem('favorites', JSON.stringify(favoritesArray))
-                renderFavorites()
+                for (let j = 0; j < favoritesArray.length; j++) {
+                    if (events[i].id === favoritesArray[j].id) {
+                        foundFavorites = true;
+                    }
+                }
+
+                if (!foundFavorites) {
+                    favoritesArray.push(events[i])
+                    localStorage.setItem('favorites', JSON.stringify(favoritesArray))
+                    renderFavorites()
+                }
+
+                isButtonClicked = true
+                btnAddToFavorites.disabled = true
+                btnAddToFavorites.textContent = 'Added to Favorites'
             }
 
             liEl.append(name, dateEl, venue, image, btn, btnAddToFavorites)
             listEl.append(liEl)
+            
         }
+    
+        renderFavorites()
+        
     })
     .catch(error => {
-        console.error('Error fetching data:', error);
-    });
+        console.error('Error fetching data:', error)
+    })
 
-function renderFavorites() {
-    favoritesListEl.innerHTML = ''
-    const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || []
-    for (let i = 0; i < favoritesArray.length; i++) {
-        let liEl = document.createElement('li')
-        liEl.textContent = favoritesArray[i].name
-        favoritesListEl.append(liEl)
+    function renderFavorites() {
+        favoritesListEl.innerHTML = ''
+        const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || []
+        for (let i = 0; i < favoritesArray.length; i++) {
+            let liEl = document.createElement('li')
+            liEl.textContent = favoritesArray[i].name
+            favoritesListEl.append(liEl)
+        }
     }
-}
