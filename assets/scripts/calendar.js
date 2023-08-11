@@ -14,11 +14,9 @@ const api2URL = `https://app.ticketmaster.com/discovery/v2/events.json?classific
             let name=document.createElement('p')
             name.textContent =events[i].name
             let dateEl=document.createElement('p')
-
             let date=new Date(events[i].dates.start.dateTime)
             dateEl.textContent=date.toLocaleString()
             let venue=document.createElement('p')
-            let venue2=<a href="bookmark-name"></a>
             venue.textContent=events[i]._embedded.venues[0].name
             let image=document.createElement('img')
             image.src=events[i].images[0].url
@@ -27,13 +25,8 @@ const api2URL = `https://app.ticketmaster.com/discovery/v2/events.json?classific
             btn.onclick=function (){
                 window.location.assign(events[i].url)
             }
-            let btnAddToFavorites =document.createElement('button')
-            btnAddToFavorites.textContent= 'Add to Favorites'
-            btnAddToFavorites.onclick= function () {
-                
-            }
         
-            liEl.append(name,dateEl, venue, image, btn, btnAddToFavorites)
+            liEl.append(name,dateEl, venue, image, btn)
             listEl.append(liEl)
         }
       })
