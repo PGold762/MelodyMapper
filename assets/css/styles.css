@@ -44,3 +44,16 @@ header p {
 input[type="text"]::placeholder {
     text-align: center;
 }
+
+.search-form {
+    margin: 0 0 10px 0;
+}
+
+.search-history {
+    margin: 20px 0;
+}
+
+.event-favorites {
+    margin: 10px 0 0 0;
+    list-style-type: none;
+}
