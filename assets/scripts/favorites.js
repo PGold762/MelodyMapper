@@ -89,6 +89,9 @@ function renderFavorites() {
   const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || [];
   for (let i = 0; i < favoritesArray.length; i++) {
     let liEl = document.createElement('li');
+    liEl.classList.add('li-class')
+    let ulEl = document.createElement('ul');
+    ulEl.classList.add('ul-class')
     liEl.textContent = favoritesArray[i].name;
     favoritesListEl.append(liEl);
   }
