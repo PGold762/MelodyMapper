@@ -70,6 +70,28 @@ header p {
 .events-fav {
     padding: 25px 0;
 }
+@media only screen and (max-width: 600px) {
+    .events-fav {
+    margin-bottom: 20px;
+    }
+}
+
+.event-favorites {
+    margin: 10px 0 0 0;
+    list-style-type: none;
+}
+
+input[type="text"]::placeholder {
+    text-align: center;
+}
+
+.search-form {
+    margin: 0 0 10px 0;
+}
+
+.search-history {
+    margin: 20px 0;
+}
 
 /* Right Side Styles */
 .right-side {
@@ -111,7 +133,7 @@ header p {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-bottom: 20px;
+    padding: 20px 0;
     border-bottom: 0.2rem solid darkblue;
 }
 
@@ -137,22 +159,7 @@ header p {
     margin: 10px 0 10px 5px;
 }
 
-input[type="text"]::placeholder {
-    text-align: center;
-}
 
-.search-form {
-    margin: 0 0 10px 0;
-}
-
-.search-history {
-    margin: 20px 0;
-}
-
-.event-favorites {
-    margin: 10px 0 0 0;
-    list-style-type: none;
-}
 
 
 

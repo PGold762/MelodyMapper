@@ -1042,6 +1042,7 @@ function createEventElement(event) {
   let image = document.createElement("img");
   image.src = event.images[0].url;
   let btn = document.createElement("button");
+  btn.className = "buy-button waves-effect waves-yellow btn";
   btn.textContent = "Buy Tickets";
   btn.onclick = function () {
     window.location.assign(event.url);
@@ -1050,6 +1051,7 @@ function createEventElement(event) {
   // Add To Favorites Button
   let btnAddToFavorites = document.createElement('button')
   btnAddToFavorites.textContent = 'Add to Favorites'
+  btnAddToFavorites.className = 'fav-btn waves-effect waves-yellow btn';
 
   const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || []
   for (let j = 0; j < favoritesArray.length; j++) {
