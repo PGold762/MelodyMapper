@@ -1,4 +1,4 @@
-const apiKey = 'FxPVrp5JjGn7rG5QR2c3H3qhNClz0Tkp';
+const apiKey2 = 'FxPVrp5JjGn7rG5QR2c3H3qhNClz0Tkp';
 const listEl =document.querySelector('#events ul')
 // const apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&keyword=concert`;
 const api2URL = `https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&city=nashville&apikey=${apiKey}`;
@@ -7,6 +7,14 @@ const api2URL = `https://app.ticketmaster.com/discovery/v2/events.json?classific
     .then(data => {  
         // const eventsDiv = document.getElementById('events');
         // eventsDiv.innerHTML = JSON.stringify(data, null, 2);
+
+Promise.all([fetch(api2URL), fetch()])
+  .then((responses) => Promise.all(responses.map((response) => response.json())))
+  .then((dataArray) => {
+
+
+
+
         console.log(data)
         let events=data._embedded.events
         for (let i = 0; i < events.length; i++) {
