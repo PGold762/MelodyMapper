@@ -7,6 +7,11 @@ fetch(api2URL)
   .then(response => response.json())
   .then(data => {
     let events = data._embedded.events;
+    events.sort((a, b) => {
+        const dateA = new Date(a.dates.start.dateTime);
+        const dateB = new Date(b.dates.start.dateTime);
+        return dateA - dateB;
+      });
     for (let i = 0; i < events.length; i++) {
       let liEl = document.createElement('li');
       liEl.className = 'event-item left';  // Add class to the li element
