@@ -32,6 +32,8 @@ Screenshot of website:
 ## Credits 
 https://materializecss.com/
 
+Used the following to assist with responsive fonts: [Stackoverflow](https://stackoverflow.com/questions/49036519/how-to-make-font-sizes-responsive-in-materialize)
+
 https://stackoverflow.com/questions/10123953/how-to-sort-an-object-array-by-date-property
 
 Ticketmaster - https://developer.ticketmaster.com/products-and-docs/apis/getting-started/?ref=apilist.fun

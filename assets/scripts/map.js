@@ -37,7 +37,7 @@ fetch(url, options)
           btn.className = "buy-button"; // Add class to the button element
           btn.textContent = "Buy Tickets";
           btn.onclick = function () {
-            window.location.assign(events[i].ticket_links[0].link;)
+            window.location.assign(events[i].ticket_links[0].link);
           };
     //       let btnAddToFavorites = document.createElement("button");
     //       btnAddToFavorites.id = `favorites-button-${i}`; // Add id to the button element
@@ -78,7 +78,7 @@ fetch(url, options)
     //   })
     //   .catch((error) => {
     //     console.error("Error fetching data:", error);
-  });
+  };
 
 // function renderFavorites() {
 //   favoritesListEl.innerHTML = "";

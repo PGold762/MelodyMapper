@@ -6,6 +6,14 @@ h1 {
     margin:5px 0 0 0;
 }
 
+h2 {
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
 header p {
     margin:0;
     padding:0;
@@ -19,7 +27,7 @@ header p {
     margin: 0 20px;
 } */
 
-/* Search Button Styles */
+/* Button Styles */
 .waves-effect {
     background-color: blue;
 }
@@ -35,11 +43,21 @@ header p {
 } */
 
 /* Right Side Styles */
-/* .right-side {
-    margin: 0 0 0 20px;
-} */
+.right-side {
+   
+} 
 
+.right-side img {
+    width: 30%;
+}
 
+.event-item {
+    margin: 20px 0;
+}
+
+.right-side .buy-button {
+    margin: 0 5px;
+}
 
 input[type="text"]::placeholder {
     text-align: center;
@@ -57,3 +75,23 @@ input[type="text"]::placeholder {
     margin: 10px 0 0 0;
     list-style-type: none;
 }
+
+/*  fontSize: */
+.xs   {font-size: 0.75rem}
+.sm   {font-size: 0.875rem}
+.base {font-size: 1rem}
+.lg   {font-size: 1.125rem}
+.xl   {font-size: 1.25rem}
+.2xl  {font-size: 1.5rem}
+.3xl  {font-size: 1.875rem}
+.4xl  {font-size: 2.25rem}
+.5xl  {font-size: 3rem}
+.6xl  {font-size: 4rem}
+.fs1  {font-size: 1vw}
+.fs2  {font-size: 1.4vw}
+.fs3  {font-size: 1.6vw}
+.fs4  {font-size: 1.8vw}
+.fs5  {font-size: 2vw}
+.fs6  {font-size: 2.2vw}
+.fs7  {font-size: 2.4vw}
+.fs8  {font-size: 2.6vw}
