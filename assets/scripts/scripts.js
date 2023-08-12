@@ -47,43 +47,57 @@ Promise.all([fetch(api2URL), fetch(url, options2)])
     console.error("Error fetching data:", error);
   });
 
+// Function to create Ticketmaster Event elements
+function createEventElement(event) {
+  let liEl = document.createElement("li");
+  let name = document.createElement("p");
+  name.textContent = events[i].name;
+  let dateEl = document.createElement("p");
+  let date = new Date(events[i].dates.start.dateTime);
+  dateEl.textContent = date.toLocaleString();
+  let venue = document.createElement("p");
+  venue.textContent = events[i]._embedded.venues[0].name;
+  let imageEl = document.createElement("p");
+  let image = document.createElement("img");
+  image.src = events[i].images[0].url;
+  let btn = document.createElement("button");
+  btn.textContent = "Buy Tickets";
+  btn.onclick = function () {
+    window.location.assign(events[i].url);
+  };
+}
 
 // Function to create RapidAPI event elements
 function createRapidAPIEventElement(event) {
   let liEl = document.createElement("li");
   liEl.className = "event-item";
   let eventName = document.createElement("h3");
-    eventName.textContent = event.name;
-  
-  let dateEl = document.createElement('p');
+  eventName.textContent = event.name;
+
+  let dateEl = document.createElement("p");
   let date = new Date(event.start_time);
   dateEl.textContent = date.toLocaleString();
-  
-  let venue = document.createElement('p');
+
+  let venue = document.createElement("p");
   venue.textContent = event.venue.name;
-  
-  let image = document.createElement('img');
-  image.className = 'event-image';
+
+  let image = document.createElement("img");
+  image.className = "event-image";
   image.src = event.thumbnail;
-  
-  let btn = document.createElement('button');
-  btn.className = 'buy-button';
-  btn.textContent = 'Buy Tickets';
+
+  let btn = document.createElement("button");
+  btn.className = "buy-button";
+  btn.textContent = "Buy Tickets";
   btn.onclick = function () {
     window.location.assign(event.ticket_links[0].link);
   };
-  
+
   liEl.append(eventName, dateEl, venue, image, btn);
   listEl.append(liEl);
 }
 
-  // ... (similarly, create other elements for RapidAPI events)
-  liEl.append(eventName /* ... other RapidAPI elements */);
-  listEl.append(liEl);
-  // let date = new Date(events[i].start_time); // ask about date structuring ***
-  //   venue.textContent = events[i].venue.name;
-  // image.src = events[i].thumbnail;
-  //window.location.assign(events[i].ticket_links[0].link);
-}
-
-// ...
+// const fullData = []
+// fullData.push(api1Data)
+// fullData.push(api2Data)
+// console.log(fullData) //To make sure it contains all of the information from both apis
+// // for loop that loops through full data and creates an element for each item then appends to the parent container

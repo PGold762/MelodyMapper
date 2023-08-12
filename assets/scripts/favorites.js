@@ -1,7 +1,7 @@
 // const apiKey = 'FxPVrp5JjGn7rG5QR2c3H3qhNClz0Tkp'
 // const listEl = document.querySelector('#events ul')
 // const favoritesListEl = document.querySelector('#favorites')
-// // const apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&keyword=concert`;
+// const apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&keyword=concert`;
 // const api2URL = `https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&city=nashville&apikey=${apiKey}`
 // fetch(api2URL)
 //     .then(response => response.json())
