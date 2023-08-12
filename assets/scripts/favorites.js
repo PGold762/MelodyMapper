@@ -31,7 +31,7 @@ fetch(api2URL)
       let image = document.createElement('img');
       image.id = `event-image-${i}`;  // Add id to the img element
       image.className = 'event-image left';  // Add class to the img element
-      image.src = events[i].images[0].url;
+      image.src = events[i].images[7].url;
       let btn = document.createElement('button');
       btn.id = `buy-button-${i}`;  // Add id to the button element
       btn.className = 'buy-button waves-effect waves-yellow btn left';  // Add class to the button element
@@ -41,7 +41,7 @@ fetch(api2URL)
       };
       let btnAddToFavorites = document.createElement('button');
       btnAddToFavorites.id = `favorites-button-${i}`;  // Add id to the button element
-      btnAddToFavorites.className = 'waves-effect waves-yellow btn left';  // Add class to the button element
+      btnAddToFavorites.className = 'fav-btn waves-effect waves-yellow btn left';  // Add class to the button element
 
             btnAddToFavorites.textContent = 'Add to Favorites'
 
