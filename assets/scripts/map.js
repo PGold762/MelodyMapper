@@ -88,4 +88,4 @@ fetch(url, options)
 //     liEl.textContent = favoritesArray[i].name;
 //     favoritesListEl.append(liEl);
 //   }
-// }
+})
