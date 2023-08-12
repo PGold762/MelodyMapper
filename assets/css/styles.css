@@ -38,8 +38,8 @@ header p {
 }
 
 .search-form {
-    padding-bottom: 25px;
-    border-bottom: 0.1rem solid gold;
+    padding: 15px 0 25px 0;
+    /* border-bottom: 0.1rem solid gold; */
 }
 
 .left-side h3 {
@@ -58,13 +58,17 @@ header p {
 
 }
 
+.left-side button {
+    margin-top:10px;
+}
+
 .search-history {
-    padding-bottom: 25px;
-    border-bottom: 0.1rem solid gold;
+    padding: 15px 0 25px 0;
+    /* border-bottom: 0.1rem solid gold; */
 }
 
 .events-fav {
-
+    padding: 25px 0;
 }
 
 /* Right Side Styles */
