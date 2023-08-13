@@ -1058,7 +1058,7 @@ function createEventElement(event) {
   for (let i = 0; i < favoritesArray.length; i++) {
       if (event.id === favoritesArray[i].id) {
           isButtonClicked = true;
-          btnAddToFavorites.disabled = true;
+          btnAddToFavorites.disabled = true; // 
           btnAddToFavorites.textContent = 'Added to Favorites';
       };
   };
