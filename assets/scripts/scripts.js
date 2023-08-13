@@ -1148,7 +1148,7 @@ function renderFavorites() {
   const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || [];
   for (let i = 0; i < favoritesArray.length; i++) {
     let link = document.createElement('a');
-    link.href = `#event-${favoritesArray[i].id}`; // Link to the event anchor
+    link.href = `#event-${favoritesArray[i].id}`;
     link.textContent = favoritesArray[i].name;
 
     let liEl = document.createElement('li');
@@ -1166,7 +1166,7 @@ function renderFavorites() {
   for (let i = 0; i < events.length; i++) {
     let eventAnchor = document.createElement('a');
     eventAnchor.id = `event-${events[i].id}`;
-    eventAnchor.className = 'event-anchor'; // Add a class for easy removal
+    eventAnchor.className = 'event-anchor';
     eventsListEl.appendChild(eventAnchor);
   }
 }
