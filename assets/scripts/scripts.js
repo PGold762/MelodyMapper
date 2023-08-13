@@ -1031,6 +1031,7 @@ function createEventElement(event) {
   let eventName = document.createElement("h3");
   eventName.textContent = event.name;
   let liEl = document.createElement("li");
+  liEl.setAttribute("event-id", event.id);
   let name = document.createElement("p");
   name.textContent = event.name;
   let dateEl = document.createElement("p");
@@ -1049,41 +1050,45 @@ function createEventElement(event) {
   };
 
   // Add To Favorites Button
-  let btnAddToFavorites = document.createElement('button')
-  btnAddToFavorites.textContent = 'Add to Favorites'
+  let btnAddToFavorites = document.createElement('button');
+  btnAddToFavorites.textContent = 'Add to Favorites';
   btnAddToFavorites.className = 'fav-btn waves-effect waves-yellow btn';
 
-  const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || []
-  for (let j = 0; j < favoritesArray.length; j++) {
-      if (event.id === favoritesArray[j].id) {
-          isButtonClicked = true
-          btnAddToFavorites.disabled = true
-          btnAddToFavorites.textContent = 'Added to Favorites'
-      }
-  }
+  const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || [];
+  for (let i = 0; i < favoritesArray.length; i++) {
+      if (event.id === favoritesArray[i].id) {
+          isButtonClicked = true;
+          btnAddToFavorites.disabled = true;
+          btnAddToFavorites.textContent = 'Added to Favorites';
+      };
+  };
 
   btnAddToFavorites.onclick = function () {
       var foundFavorites = false;
-      console.log(event)
-      const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || []
-      for (let j = 0; j < favoritesArray.length; j++) {
-          if (event.id === favoritesArray[j].id) {
+      console.log(event);
+      const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || [];
+      for (let i = 0; i < favoritesArray.length; i++) {
+          if (event.id === favoritesArray[i].id) {
               foundFavorites = true;
-          }
-      }
+          };
+      };
 
       if (!foundFavorites) {
-          favoritesArray.push(event)
-          localStorage.setItem('favorites', JSON.stringify(favoritesArray))
-          renderFavorites()
+          favoritesArray.push(event);
+          localStorage.setItem('favorites', JSON.stringify(favoritesArray));
+          renderFavorites();
       }
 
-      isButtonClicked = true
-      btnAddToFavorites.disabled = true
-      btnAddToFavorites.textContent = 'Added to Favorites'
+      isButtonClicked = true;
+      btnAddToFavorites.disabled = true;
+      btnAddToFavorites.textContent = 'Added to Favorites';
   } // End Favorites
 
-  liEl.append(eventName, dateEl, venue, image, btn, btnAddToFavorites);
+  let anchor = document.createElement('a');
+  anchor.id = `event-${event.id}`; 
+  anchor.appendChild(eventName);
+
+  liEl.append(anchor, eventName, dateEl, venue, image, btn, btnAddToFavorites);
   listEl.append(liEl);
 }
 
@@ -1091,6 +1096,9 @@ function createEventElement(event) {
 function createRapidAPIEventElement(event) {
   let liEl = document.createElement("li");
   liEl.className = "event-item";
+  liEl.setAttribute("event-id", event.id);
+  anchor.id = `event-${event.id}`; 
+  anchor.className = 'event-anchor';
   let eventName = document.createElement("h3");
   eventName.textContent = event.name;
 
@@ -1112,17 +1120,57 @@ function createRapidAPIEventElement(event) {
     window.location.assign(event.ticket_links[0].link);
   };
 
-  liEl.append(eventName, dateEl, venue, image, btn, btnAddToFavorites);
+  // Add To Favorites Button
+  let btnAddToFavorites = document.createElement('button');
+  btnAddToFavorites.textContent = 'Add to Favorites';
+  btnAddToFavorites.className = 'fav-btn waves-effect waves-yellow btn';
+
+  let anchor = document.createElement('a');
+  anchor.id = `event-${event.id}`; 
+  anchor.appendChild(eventName);
+
+  liEl.append(anchor, eventName, dateEl, venue, image, btn, btnAddToFavorites);
   listEl.append(liEl);
 }
-function renderFavorites() {
-  favoritesListEl.innerHTML = ''
-  const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || []
-  for (let i = 0; i < favoritesArray.length; i++) {
-      let liEl = document.createElement('li')
-      liEl.textContent = favoritesArray[i].name
-      favoritesListEl.append(liEl)
+function scrollToEvent(eventId) {
+  const eventListItem = document.querySelector(`#events ul li[event-id="${eventId}"]`);
+  if (eventListItem) {
+    eventListItem.scrollIntoView({ behavior: 'smooth' });
   }
 }
+
+function renderFavorites() {
+  const favoritesListEl = document.getElementById('favorites-list');
+  const eventsListEl = document.getElementById('events-list');
+
+  favoritesListEl.innerHTML = '';
+
+  const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || [];
+  for (let i = 0; i < favoritesArray.length; i++) {
+    let link = document.createElement('a');
+    link.href = `#event-${favoritesArray[i].id}`; // Link to the event anchor
+    link.textContent = favoritesArray[i].name;
+
+    let liEl = document.createElement('li');
+    liEl.appendChild(link);
+    favoritesListEl.appendChild(liEl);
+  }
+
+  // Clear the existing event anchors
+  const existingEventAnchors = document.querySelectorAll('.event-anchor');
+  existingEventAnchors.forEach((anchor) => {
+    anchor.remove();
+  });
+
+  // Create new event anchors in the Events section
+  for (let i = 0; i < events.length; i++) {
+    let eventAnchor = document.createElement('a');
+    eventAnchor.id = `event-${events[i].id}`;
+    eventAnchor.className = 'event-anchor'; // Add a class for easy removal
+    eventsListEl.appendChild(eventAnchor);
+  }
+}
+
+window.addEventListener('load', renderFavorites);
 
 
