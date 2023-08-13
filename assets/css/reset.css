@@ -26,11 +26,10 @@ img {
   }
 
 a {
-  color: #FFFF00;
+  color: darkblue;
   font-weight:bold;
 }
 
 a:hover {
-  color: #1A237E;
-
+  background-color: yellow;
 }
