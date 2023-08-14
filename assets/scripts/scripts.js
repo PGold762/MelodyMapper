@@ -1122,10 +1122,6 @@ function createRapidAPIEventElement(event) {
   btnAddToFavorites.textContent = 'Add to Favorites';
   btnAddToFavorites.className = 'fav-btn waves-effect waves-yellow btn';
 
-  // let anchor = document.createElement('a');
-  // anchor.id = `event-${event.id}`; 
-  // anchor.appendChild(eventName);
-
   liEl.append(anchor, eventName, dateEl, venue, image, btn, btnAddToFavorites);
   listEl.append(liEl);
 } // End RapidAPI
@@ -1156,19 +1152,6 @@ function renderFavorites() {
     favoritesListEl.appendChild(liEl);
   }
 
-  // // Clear the existing event anchors
-  // const existingEventAnchors = document.querySelectorAll('.event-anchor');
-  // existingEventAnchors.forEach((anchor) => {
-  //   anchor.remove();
-  // });
-
-  // Create new event anchors in the Events section
-  // for (let i = 0; i < events.length; i++) {
-  //   let eventAnchor = document.createElement('a');
-  //   eventAnchor.id = `event-${events[i].id}`;
-  //   eventAnchor.className = 'event-anchor';
-  //   eventsListEl.appendChild(eventAnchor);
-  // }
 }
 
 window.addEventListener('load', renderFavorites);
