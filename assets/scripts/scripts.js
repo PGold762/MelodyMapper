@@ -1097,6 +1097,7 @@ function createRapidAPIEventElement(event) {
   let liEl = document.createElement("li");
   liEl.className = "event-item";
   liEl.setAttribute("event-id", event.id);
+  let anchor = document.createElement('a');
   anchor.id = `event-${event.id}`; 
   anchor.className = 'event-anchor';
   let eventName = document.createElement("h3");
@@ -1108,7 +1109,7 @@ function createRapidAPIEventElement(event) {
   venue.textContent = event.venue.name;
   let image = document.createElement("img");
   image.className = "event-image";
-  image.src = event.thumbnail;
+  image.src = event.thumbnail ?? "";
   let btn = document.createElement("button");
   btn.className = "buy-button";
   btn.textContent = "Buy Tickets";
@@ -1121,9 +1122,9 @@ function createRapidAPIEventElement(event) {
   btnAddToFavorites.textContent = 'Add to Favorites';
   btnAddToFavorites.className = 'fav-btn waves-effect waves-yellow btn';
 
-  let anchor = document.createElement('a');
-  anchor.id = `event-${event.id}`; 
-  anchor.appendChild(eventName);
+  // let anchor = document.createElement('a');
+  // anchor.id = `event-${event.id}`; 
+  // anchor.appendChild(eventName);
 
   liEl.append(anchor, eventName, dateEl, venue, image, btn, btnAddToFavorites);
   listEl.append(liEl);
