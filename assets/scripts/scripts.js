@@ -1049,7 +1049,7 @@ function createEventElement(event) {
     window.location.assign(event.url);
   };
 
-  // Add To Favorites Button
+  // Add To Favorites Button for Ticketmaster
   let btnAddToFavorites = document.createElement('button');
   btnAddToFavorites.textContent = 'Add to Favorites';
   btnAddToFavorites.className = 'fav-btn waves-effect waves-yellow btn';
@@ -1090,7 +1090,7 @@ function createEventElement(event) {
 
   liEl.append(anchor, eventName, dateEl, venue, image, btn, btnAddToFavorites);
   listEl.append(liEl);
-}
+} // End TicketMaster API
 
 // Function to create RapidAPI event elements
 function createRapidAPIEventElement(event) {
@@ -1101,18 +1101,14 @@ function createRapidAPIEventElement(event) {
   anchor.className = 'event-anchor';
   let eventName = document.createElement("h3");
   eventName.textContent = event.name;
-
   let dateEl = document.createElement("p");
   let date = new Date(event.start_time);
   dateEl.textContent = date.toLocaleString();
-
   let venue = document.createElement("p");
   venue.textContent = event.venue.name;
-
   let image = document.createElement("img");
   image.className = "event-image";
   image.src = event.thumbnail;
-
   let btn = document.createElement("button");
   btn.className = "buy-button";
   btn.textContent = "Buy Tickets";
@@ -1120,7 +1116,7 @@ function createRapidAPIEventElement(event) {
     window.location.assign(event.ticket_links[0].link);
   };
 
-  // Add To Favorites Button
+  // Add To Favorites Button for Rapid API
   let btnAddToFavorites = document.createElement('button');
   btnAddToFavorites.textContent = 'Add to Favorites';
   btnAddToFavorites.className = 'fav-btn waves-effect waves-yellow btn';
@@ -1131,14 +1127,17 @@ function createRapidAPIEventElement(event) {
 
   liEl.append(anchor, eventName, dateEl, venue, image, btn, btnAddToFavorites);
   listEl.append(liEl);
-}
+} // End RapidAPI
+
+// Scrolling to Event Function
 function scrollToEvent(eventId) {
   const eventListItem = document.querySelector(`#events ul li[event-id="${eventId}"]`);
   if (eventListItem) {
     eventListItem.scrollIntoView({ behavior: 'smooth' });
   }
-}
+} 
 
+//Render Favorites Function
 function renderFavorites() {
   const favoritesListEl = document.getElementById('favorites-list');
   const eventsListEl = document.getElementById('events-list');
@@ -1156,19 +1155,19 @@ function renderFavorites() {
     favoritesListEl.appendChild(liEl);
   }
 
-  // Clear the existing event anchors
-  const existingEventAnchors = document.querySelectorAll('.event-anchor');
-  existingEventAnchors.forEach((anchor) => {
-    anchor.remove();
-  });
+  // // Clear the existing event anchors
+  // const existingEventAnchors = document.querySelectorAll('.event-anchor');
+  // existingEventAnchors.forEach((anchor) => {
+  //   anchor.remove();
+  // });
 
   // Create new event anchors in the Events section
-  for (let i = 0; i < events.length; i++) {
-    let eventAnchor = document.createElement('a');
-    eventAnchor.id = `event-${events[i].id}`;
-    eventAnchor.className = 'event-anchor';
-    eventsListEl.appendChild(eventAnchor);
-  }
+  // for (let i = 0; i < events.length; i++) {
+  //   let eventAnchor = document.createElement('a');
+  //   eventAnchor.id = `event-${events[i].id}`;
+  //   eventAnchor.className = 'event-anchor';
+  //   eventsListEl.appendChild(eventAnchor);
+  // }
 }
 
 window.addEventListener('load', renderFavorites);
