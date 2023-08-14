@@ -3,26 +3,6 @@ h1 {
     color: #000;
     font-weight: bold;
     padding:0;
-    /* margin: 0 0 0 10px; */
-}
-
-.h-logo {
-    display: flex;
-    text-align: center;
-}
-
-@media only screen and (max-width: 600px) {
-    h1 {
-    text-align:center;
-    margin: 15px 0;
-    }
-}
-
-@media only screen and (max-width: 991px) {
-    h1 {
-    text-align:center;
-    margin: 15px 0;
-    }
 }
 
 h2 {
@@ -43,20 +23,6 @@ header p {
     font-size: 25px;
 }
 
-@media only screen and (max-width: 600px) {
-    header p {
-    text-align:center;
-    margin: 15px 0;
-    }
-}
-
-@media only screen and (max-width: 991px) {
-    header p {
-    text-align:center;
-    margin: 15px 0;
-    }
-}
-
 /* Button Styles */
 .waves-effect {
     background-color: blue;
@@ -74,7 +40,6 @@ header p {
 
 .search-form {
     padding: 15px 0 25px 0;
-    /* border-bottom: 0.1rem solid gold; */
 }
 
 .left-side h3 {
@@ -99,7 +64,6 @@ header p {
 
 .search-history {
     padding: 15px 0 25px 0;
-    /* border-bottom: 0.1rem solid gold; */
 }
 
 input[type="text"]::placeholder {
@@ -167,16 +131,6 @@ background-color:yellow;
 .right-side ul {
     margin:0 10px;
 }
-
-/* .right-side img {
-    max-width: 50%;
-}
-
-@media only screen and (max-width: 600px) {
-    .right-side img {
-    max-width: 60%;
-    }
-} */
 
 #events {
     display: flex;
