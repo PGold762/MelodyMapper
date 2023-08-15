@@ -48,10 +48,12 @@ Download the files from the repo and install on domain. Should work instantly.
 
 ## Usage
 
-This is a responsive website that presents a weather dashboard. You're able to search by city and be presented with current day forecast and 5 day forecast.
-Link to view: [Weather Dashboard](https://pgold762.github.io/TimedQuiz/)
+This is a responsive website that presents a user with Events/Concerts in Nashville, TN. The user may buy tickets or add the band to the favorites so they may come back later and have quick access in order to buy tickets.
+
+Link to view: [Melody Mapper](https://pgold762.github.io/MelodyMapper/)
+
 Screenshot of website:
-![Weather Dashboard](./assets/images/timed-quiz.png "Weather")
+![Melody Mapper](./assets/images/melodymapper-screencap.png "Weather")
 
 ## Credits
 
@@ -69,3 +71,11 @@ Ticketmaster - https://developer.ticketmaster.com/products-and-docs/apis/getting
 Lucas- Tutoring with Meg Meyers
 
 AskBCS
+
+Received help from John (Teacher) on an error we received about an anchor
+
+Received help from Anthony (TA) on setting up the sort by date feature
+
+Received help from Anthony on initial setup of Favorites
+
+Received help from a friend LeBraun (Sr Programmer) on setting up the Promise and MockAPI Data
