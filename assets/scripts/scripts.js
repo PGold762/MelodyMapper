@@ -1115,7 +1115,7 @@ function createRapidAPIEventElement(event) {
   image.className = "event-image";
   image.src = event.thumbnail ?? "";
   let btn = document.createElement("button");
-  btn.className = "buy-button";
+  btn.className = "buy-button waves-effect waves-yellow btn";
   btn.textContent = "Buy Tickets";
   btn.onclick = function () {
     window.location.assign(event.ticket_links[0].link);
