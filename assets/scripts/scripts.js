@@ -1125,6 +1125,35 @@ function createRapidAPIEventElement(event) {
   let btnAddToFavorites = document.createElement('button');
   btnAddToFavorites.textContent = 'Add to Favorites';
   btnAddToFavorites.className = 'fav-btn waves-effect waves-yellow btn';
+  const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || [];
+    for (let i = 0; i < favoritesArray.length; i++) {
+        if (event.id === favoritesArray[i].id) {
+            isButtonClicked = true;
+            btnAddToFavorites.disabled = true; // 
+            btnAddToFavorites.textContent = 'Added to Favorites';
+        };
+    };
+
+    btnAddToFavorites.onclick = function () {
+        var foundFavorites = false;
+        console.log(event);
+        const favoritesArray = JSON.parse(localStorage.getItem('favorites')) || [];
+        for (let i = 0; i < favoritesArray.length; i++) {
+            if (event.id === favoritesArray[i].id) {
+                foundFavorites = true;
+            };
+        };
+
+        if (!foundFavorites) {
+            favoritesArray.push(event);
+            localStorage.setItem('favorites', JSON.stringify(favoritesArray));
+            renderFavorites();
+        }
+
+        isButtonClicked = true;
+        btnAddToFavorites.disabled = true;
+        btnAddToFavorites.textContent = 'Added to Favorites';
+    } // End Favorites
 
     liEl.append(anchor, eventName, dateEl, venue, image, btn, btnAddToFavorites);
     listEl.append(liEl);
