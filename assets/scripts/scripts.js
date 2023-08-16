@@ -1,4 +1,4 @@
-const livemode = false;
+const livemode = true;
 
  function mockRapidApiFetch(url, options) {
     const payload = {
